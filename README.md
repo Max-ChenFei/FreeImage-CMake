@@ -8,5 +8,10 @@ This repository is a fork of the FreeImage that supports cmake building.
 
 Here I use Visual Studio 19 to develop this CMake project. The local machine is Windows and the remote Linux server is added in Visual Studio.[1]
 
+### Windows
+* Windows 10
+* CMake 3.16.6
+* CMake generator:  Visual Studio 16 2019 Win64, **NOT Ninja**
+* configuration Type:  Debug or Release
 ## Reference
 [1] [CMake projects in Visual Studio](https://docs.microsoft.com/en-us/cpp/build/cmake-projects-in-visual-studio?view=msvc-160) and [Build Linux projects with CMake in Visual studio](https://docs.microsoft.com/en-us/cpp/linux/cmake-linux-project?view=msvc-160).
