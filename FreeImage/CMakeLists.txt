@@ -14,6 +14,11 @@ if(WIN32)
 	add_compile_definitions(LIBRAW_NODLL)
 	# __declspec(dllexport) or __declspec(dllimport) for FreeImage
 	add_compile_definitions(FREEIMAGE_EXPORTS)
+else()
+	# LibRaw
+	add_compile_definitions(NO_LCMS)
+	# LibJXR
+	add_compile_definitions(__ANSI__)
 endif()
 
 # copy the directores from Source/Makefile.srcs
