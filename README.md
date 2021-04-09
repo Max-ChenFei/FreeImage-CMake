@@ -23,10 +23,10 @@ Here I use Visual Studio 19 to develop this CMake project. The local machine is 
 
 ## Process
 
-| Target    | Configuration Type | Build |
-| --------- | ------------------ | ----- |
-| FreeImage | Debug              | Pass  |
-| FreeImage | Release            | Pass  |
+| Target    | OS + Configuration Type | Build |
+| --------- | ----------------------- | ----- |
+| FreeImage | Windows + Debug/Release | Pass  |
+| FreeImage | Linux + Debug/Release   | Pass  |
 
 ## Reference
 [1] [CMake projects in Visual Studio](https://docs.microsoft.com/en-us/cpp/build/cmake-projects-in-visual-studio?view=msvc-160) and [Build Linux projects with CMake in Visual studio](https://docs.microsoft.com/en-us/cpp/linux/cmake-linux-project?view=msvc-160).
