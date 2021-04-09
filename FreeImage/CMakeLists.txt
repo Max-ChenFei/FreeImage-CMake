@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.16.6)
 project(FreeImage VERSION 3.18.0)
 
-set(CMAKE_C_STANDARD 14)
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_C_STANDARD 90)
+set(CMAKE_CXX_STANDARD 98)
 
 # LibJXR
 add_compile_definitions(DISABLE_PERF_MEASUREMENT)
