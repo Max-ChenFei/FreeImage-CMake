@@ -13,6 +13,14 @@ Here I use Visual Studio 19 to develop this CMake project. The local machine is 
 * CMake 3.16.6
 * CMake generator:  Visual Studio 16 2019 Win64, **NOT Ninja**
 * configuration Type:  Debug or Release
+### Linux
+
+* Ubuntu 18.04.5 LTS
+* CMake 3.19.6
+* gcc, g++ 8.4.0
+* CMake generator: Unix Makefile
+* configuration Type:  Debug or Release
+
 ## Process
 
 | Target    | Configuration Type | Build |
