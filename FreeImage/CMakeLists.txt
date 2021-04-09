@@ -9,7 +9,6 @@ add_compile_definitions(DISABLE_PERF_MEASUREMENT)
 # OpenJPEG
 add_compile_definitions(OPJ_STATIC)
 if(WIN32)
-	add_compile_definitions(_WINDOWS)
 	# __declspec(dllexport) or __declspec(dllimport) for LibRawLite
 	add_compile_definitions(LIBRAW_NODLL)
 	# __declspec(dllexport) or __declspec(dllimport) for FreeImage
