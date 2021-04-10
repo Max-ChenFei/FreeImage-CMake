@@ -80,7 +80,7 @@ int main(int argc, char *argv[]) {
 	testMemIO("exif.jxr");
 
 	// test multipage functions
-	//testMultiPage("sample.png");
+	testMultiPage("sample.png");
 
 	// test multipage streaming
 	testStreamMultiPage("sample.tif");
