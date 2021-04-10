@@ -1,4 +1,7 @@
 # FreeImage-CMake
+
+
+
 This repository is a fork of the FreeImage that supports cmake building.
 [FreeImage](https://freeimage.sourceforge.io/) is an Open Source library project for developers who would like to support popular graphics image formats like PNG, BMP, JPEG, TIFF and others as needed by today's multimedia applications. FreeImage is easy to use, fast, multithreading safe, compatible with all 32-bit or 64-bit versions of Windows, and cross-platform (works both with Linux and Mac OS X).
 
@@ -21,14 +24,26 @@ Here I use Visual Studio 19 to develop this CMake project. The local machine is 
 * CMake generator: Unix Makefile
 * configuration Type:  Debug or Release
 
-## Process
+## Building Progress
 
-| Target            | OS + Configuration Type | Build  |
-| ----------------- | ----------------------- | ------ |
-| FreeImage         | Windows + Debug/Release | Pass   |
-| FreeImage         | Linux + Debug/Release   | Pass   |
-| FreeImage TestAPI | Windows + Release       | Pass   |
-| FreeImage TestAPI | Windows + Debug         | Failed |
+configuration Type:  Debug or Release
+
+| Target              | Windows        | Linux          |
+| ------------------- | -------------- | -------------- |
+| FreeImage           | Debug, Release | Debug, Release |
+| FreeImage TestAPI   | Debug, Release |                |
+| FreeImage Plus      | Debug, Release |                |
+| FreeImage Plus Test | Debug, Release |                |
+
+## Test Status
+
+| Target              | Window | Linux |
+| ------------------- | ------ | ----- |
+| FreeImage TestAPI   | Pass   |       |
+| FreeImage Plus Test | Pass   |       |
+
+
 
 ## Reference
+
 [1] [CMake projects in Visual Studio](https://docs.microsoft.com/en-us/cpp/build/cmake-projects-in-visual-studio?view=msvc-160) and [Build Linux projects with CMake in Visual studio](https://docs.microsoft.com/en-us/cpp/linux/cmake-linux-project?view=msvc-160).
