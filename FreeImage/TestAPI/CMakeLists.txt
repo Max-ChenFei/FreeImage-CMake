@@ -10,14 +10,18 @@ set(FreeImageTargetName FreeImage)
 target_link_libraries(${PROJECT_NAME} PRIVATE ${FreeImageTargetName})
 add_dependencies(${PROJECT_NAME} ${FreeImageTargetName})
 
-# copy the test data
-set(${PROJECT_NAME}_TESTDATA_DIR ${CMAKE_CURRENT_SOURCE_DIR})
+# Destination Path are different on Windows and Linux
+if(WIN32)
+	set(DIST "${CMAKE_BINARY_DIR}/TestAPI/$<CONFIG>/")
+else()
+	set(DIST "${CMAKE_BINARY_DIR}/TestAPI/")
+endif()
 add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
 				   COMMAND ${CMAKE_COMMAND} -E copy
 				   		   "${${PROJECT_NAME}_TESTDATA_DIR}/exif.jpg"
 						   "${${PROJECT_NAME}_TESTDATA_DIR}/exif.jxr"
 						   "${${PROJECT_NAME}_TESTDATA_DIR}/sample.png"
-   						   "${CMAKE_BINARY_DIR}/TestAPI/$<CONFIG>/")
+   						   "${DIST}")
 
 # Copying dependent DLLs to executable directory after building the target on Windows
 if(MSVC)
