@@ -25,25 +25,12 @@ This CMake project is build in Visual Studio 19[1]. The [**CMakeSettings.json**]
 * CMake generator: Unix Makefile
 * configuration Type:  Debug or Release
 
-## Building Progress
-
-configuration Type:  Debug or Release
-
-| Target              | Windows        | Linux          |
-| ------------------- | -------------- | -------------- |
-| FreeImage           | Debug, Release | Debug, Release |
-| FreeImage TestAPI   | Debug, Release |                |
-| FreeImage Plus      | Debug, Release |                |
-| FreeImage Plus Test | Debug, Release |                |
-
-## Test Status
+## Test
 
 | Target              | Window | Linux |
 | ------------------- | ------ | ----- |
-| FreeImage TestAPI   | Pass   |       |
-| FreeImage Plus Test | Pass   |       |
-
-
+| FreeImage TestAPI   | Pass   | Pass  |
+| FreeImage Plus Test | Pass   | Pass  |
 
 ## Reference
 
