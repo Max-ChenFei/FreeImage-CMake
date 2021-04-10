@@ -76,7 +76,6 @@ int main(int argc, char *argv[]) {
 
 	// test memory IO
 	testMemIO("sample.png");
-	// Todo jxr error
 	testMemIO("exif.jxr");
 
 	// test multipage functions
