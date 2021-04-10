@@ -27,7 +27,7 @@ set(SOURCE_FILES ./Source/FreeImage/BitmapAccess.cpp ./Source/FreeImage/ColorLoo
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES})
 set_target_properties(${PROJECT_NAME} PROPERTIES DEBUG_POSTFIX "d")
 set(${PROJECT_NAME}_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/Source)
-target_include_directories(${PROJECT_NAME} PUBLIC ${PROJECT_NAME}_INCLUDE_DIR)
+target_include_directories(${PROJECT_NAME} PUBLIC ${${PROJECT_NAME}_INCLUDE_DIR})
 
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/TestAPI)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Wrapper/FreeImagePlus)
