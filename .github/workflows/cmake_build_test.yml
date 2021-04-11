@@ -27,7 +27,7 @@ jobs:
     - name: Compile using MSBuild
       shell: bash
       working-directory: FreeImage/build
-      run: msbuild /p:Configuration=Debug; Platform=x64 ALL_BUILD.vcxproj
+      run: msbuild /p:Configuration=Debug;Platform=x64 ALL_BUILD.vcxproj
                    
       
     - name: Test
