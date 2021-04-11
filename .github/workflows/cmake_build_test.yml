@@ -15,6 +15,7 @@ jobs:
       uses: microsoft/setup-msbuild@v1
     
     - name: Go to Build Dir
+      working-directory: FreeImage
       shell: bash
       run: mkdir build  && cd build
       
