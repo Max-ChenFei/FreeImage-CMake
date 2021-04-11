@@ -22,14 +22,15 @@ jobs:
     - name: Call Cmake to generate MS solution
       shell: bash
       working-directory: FreeImage/build
-      run: cmake .. -G "Visual Studio 16 2019" -A x64 -DCMAKE_CONFIGURATION_TYPES:STRING="${BUILD_DEBUG_TYPE}"
+      run: cmake .. -G "Visual Studio 16 2019" -A x64 -DCMAKE_CONFIGURATION_TYPES:STRING="${{BUILD_DEBUG_TYPE}}"
       
     - name: Compile using MSBuild
       shell: bash
       working-directory: FreeImage/build
-      run: msbuild /p:Configuration=${BUILD_DEBUG_TYPE}; Platform=x64 ALL_BUILD.vcxproj
+      run: msbuild /p:Configuration=${{BUILD_DEBUG_TYPE}}; Platform=x64 ALL_BUILD.vcxproj
+                   
       
     - name: Test
       shell: bash
       working-directory: FreeImage/build
-      run: ctest -C $BUILD_DEBUG_TYPE
+      run: ctest -C ${{BUILD_DEBUG_TYPE}}
