@@ -4,6 +4,7 @@ on: [push]
 
 env:
   BUILD_DEBUG_TYPE: Debug
+
 jobs:
   Windows_Build_Test:
     runs-on: windows-latest
@@ -11,9 +12,9 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: Add MSBuild to PATH
-      uses: microsoft/setup-msbuild@v1
+      uses: microsoft/setup-msbuild
     
-    - name: CBuild Dir
+    - name: Make Build Dir
       shell: bash
       working-directory: FreeImage
       run: mkdir build
@@ -26,7 +27,7 @@ jobs:
     - name: Compile using MSBuild
       shell: bash
       working-directory: FreeImage/build
-      run: MSBuild /p:Configuration=${BUILD_DEBUG_TYPE}; Platform=x64 ALL_BUILD.vcxproj
+      run: msbuild /p:Configuration=${BUILD_DEBUG_TYPE}; Platform=x64 ALL_BUILD.vcxproj
       
     - name: Test
       shell: bash
