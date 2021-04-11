@@ -22,7 +22,7 @@ jobs:
     - name: Call Cmake to generate MS solution
       shell: bash
       working-directory: FreeImage/build
-      run: cmake .. -G "Visual Studio 16 2019" -A x64 -DCMAKE_CONFIGURATION_TYPES:STRING="Debug"
+      run: cmake -S .. -B . -G "Visual Studio 16 2019" -A x64 -DCMAKE_CONFIGURATION_TYPES:STRING="Debug"
       
     - name: Compile using MSBuild
       shell: bash
