@@ -1,0 +1,33 @@
+name: CMake
+
+on: [push]
+
+env:
+  BUILD_DEBUG_TYPE: Debug
+jobs:
+  Windows_Build_Test:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Add MSBuild to PATH
+      uses: microsoft/setup-msbuild@v1
+      with:
+         vs-version: '[16.8,16.9)'
+    
+    - name: Go to Build Dir
+      shell: bash
+      run: mkdir build  && cd build
+      
+    - name: Call Cmake to generate MS solution
+      shell: bash
+      run: cmake .. -G "Visual Studio 16 2019" -A x64 -DCMAKE_CONFIGURATION_TYPES:STRING="${BUILD_DEBUG_TYPE}"
+      
+    - name: Compile using MSBuild
+      shell: bash
+      run: msbuild /p:Configuration=${BUILD_DEBUG_TYPE}; Platform=x64 ALL_BUILD.vcxproj
+      
+    - name: Test
+      shell: bash
+      run: ctest -C $BUILD_DEBUG_TYPE
