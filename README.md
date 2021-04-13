@@ -25,13 +25,6 @@ This CMake project is build in Visual Studio 19[1]. The [**CMakeSettings.json**]
 * CMake generator: Unix Makefile
 * configuration Type:  Debug or Release
 
-## Test
-
-| Target              | Window | Linux |
-| ------------------- | ------ | ----- |
-| FreeImage TestAPI   | Pass   | Pass  |
-| FreeImage Plus Test | Pass   | Pass  |
-
 ## Reference
 
 [1] [CMake projects in Visual Studio](https://docs.microsoft.com/en-us/cpp/build/cmake-projects-in-visual-studio?view=msvc-160) and [Build Linux projects with CMake in Visual studio](https://docs.microsoft.com/en-us/cpp/linux/cmake-linux-project?view=msvc-160).
