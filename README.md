@@ -9,21 +9,33 @@ This repository is a fork of the FreeImage that supports cmake building.
 
 ## Building
 
-This CMake project is build in Visual Studio 19[1]. The [**CMakeSettings.json**](https://docs.microsoft.com/en-us/cpp/build/cmakesettings-reference?view=msvc-160) file contains information that Visual Studio uses for IntelliSense and to construct the command-line arguments that it passes to cmake.exe for a specified configuration and compiler environment.  Here the local machine is Windows and the remote Linux server is connected in Visual Studio for building[2].
-
 ### Windows
-
-* Windows 10
-* CMake 3.16.6
-* CMake generator:  Visual Studio 16 2019 Win64, **NOT Ninja**
-* configuration Type:  Debug or Release
+set <build_type> Debug or Release
+```
+cd <path-to-source-directory>
+# CMake discourages in-source build, so create a separate build directory
+cmake -E make_directory build
+cd build
+# Generate a buildsystem for Windows
+cmake .. -G "Visual Studio 16 2019" -A x64 -DCMAKE_CONFIGURATION_TYPES:STRING=<build_type> 
+# Build using MSBuild
+msbuild -m -p:"Configuration=<build_type>;Platform=x64" ALL_BUILD.vcxproj
+# Test
+ctest -C <build_type>
+```
 ### Linux
+set <build_type> Debug or Release
+```
+cd <path-to-source-directory>
+cmake -E make_directory build
+cd build
+cmake .. -G "Unix Makefiles" -DCMAKE_CONFIGURATION_TYPES:STRING=<build_type> 
+cmake --build . --config <build_type>
+ctest -C <build_type>
+```
 
-* Ubuntu 18.04.5 LTS
-* CMake 3.19.6
-* gcc, g++ 8.4.0
-* CMake generator: Unix Makefile
-* configuration Type:  Debug or Release
+## Development
+I use Visual Studio for C++ cross platform development on Windows and Linux[1]. The [**CMakeSettings.json**](https://docs.microsoft.com/en-us/cpp/build/cmakesettings-reference?view=msvc-160) file contains information that Visual Studio uses for IntelliSense and to construct the command-line arguments that it passes to cmake.exe for a specified configuration and compiler environment.  Here the local machine is Windows and the remote Linux server is connected in Visual Studio for building[2].
 
 ## Reference
 
